@@ -30,6 +30,8 @@ object ScaldingExampleProjectBuild extends Build {
       libraryDependencies ++= Seq(
         Libraries.scaldingCore,
         Libraries.hadoopCore,
+        Libraries.hadoopCommon,
+        Libraries.hadoopClient,
         Libraries.specs2
         // Add your additional libraries here (comma-separated)...
       )
