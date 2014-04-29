@@ -32,8 +32,11 @@ object ScaldingExampleProjectBuild extends Build {
         Libraries.hadoopCore,
         Libraries.hadoopCommon,
         Libraries.hadoopClient,
-        Libraries.specs2
+        Libraries.specs2,
         // Add your additional libraries here (comma-separated)...
+        "com.github.nscala-time"   % "nscala-time_2.10" % "0.8.0",
+        "joda-time"               % "joda-time"      % "2.3",
+        "org.joda"                % "joda-convert"   % "1.2"
       )
     )
 }
