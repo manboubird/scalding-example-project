@@ -34,6 +34,15 @@ object ScaldingExampleProjectBuild extends Build {
         Libraries.hadoopClient,
         Libraries.specs2
         // Add your additional libraries here (comma-separated)...
-      )
+        ,Libraries.urlNormalization
+        ,Libraries.uaParser
+        ,Libraries.gson
+//        ,"net.liftweb" %% "lift-json" % "2.4" // beter than gson
+//        ,"net.liftweb" % "lift-json" % "2.0"
+//        ,"org.scala-tools.time" % "time_2.9.1" % "0.5"
+        ,"com.github.nscala-time"  % "nscala-time_2.10" % "0.8.0"
+        ,"joda-time"               % "joda-time"      % "2.3"
+        ,"org.joda"                % "joda-convert"   % "1.2"
+  )
     )
 }

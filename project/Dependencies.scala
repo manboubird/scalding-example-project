@@ -14,10 +14,12 @@ import sbt._
 
 object Dependencies {
   val resolutionRepos = Seq(
+    //,"Local Ivy Repository" at "file://" + file(Path.userHome.absolutePath + "/.ivy2/local").getAbsolutePath,
+    "Local Maven .m2/reporistory Repository" at "file://" + file(Path.userHome.absolutePath + "/.m2/repository").getAbsolutePath,
+    "Local Maven .m2 Repository" at "file://" + file(Path.userHome.absolutePath + "/.m2").getAbsolutePath,
     "ScalaTools snapshots at Sonatype" at "https://oss.sonatype.org/content/repositories/snapshots/",
     "Concurrent Maven Repo" at "http://conjars.org/repo", // For Scalding, Cascading etc
     "cloudera-releases" at "https://repository.cloudera.com/artifactory/cloudera-repos"
-//    ,"Local Repository" at file(Path.userHome.absolutePath + "/.ivy2/local").getAbsolutePath
   )
 
   object V {
@@ -27,6 +29,9 @@ object Dependencies {
     val hadoopClient = "2.0.0-mr1-cdh4.5.0"
     val specs2    = "2.3.11"//"1.12.3" // -> "1.13" when we bump to Scala 2.10.0
     // Add versions for your additional libraries here...
+    val urlNormalization  = "1.0.0"
+    val uaParser          = "1.3.0-SNAPSHOT"
+    val gson              = "2.2.4"
   }
 
   object Libraries {
@@ -35,6 +40,9 @@ object Dependencies {
     // Add additional libraries from mvnrepository.com (SBT syntax) here...
     val hadoopCommon = "org.apache.hadoop"          %  "hadoop-common"        % V.hadoopCommon % "provided"
     val hadoopClient = "org.apache.hadoop"          %  "hadoop-client"        % V.hadoopClient % "provided"
+    val urlNormalization  = "ch.sentric"            %  "url-normalization"    % V.urlNormalization
+    val uaParser          = "ua_parser"             %  "ua-parser"            % V.uaParser
+    val gson              = "com.google.code.gson"  %  "gson"                 % V.gson
     // Scala (test only)
     val specs2       = "org.specs2"                 %% "specs2"               % V.specs2       % "test"
   }
